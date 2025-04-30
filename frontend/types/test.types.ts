@@ -25,12 +25,18 @@ export interface CreateTestPayload {
   wordCount: number;
 }
 
+export interface GetUserTestsPayload {
+  success: boolean;
+  message: string;
+  data?: Test[];
+}
+
 export interface TestProviderPayload {
   testLanguage: string;
   updateTestLanguage: (language: string) => void;
 
   createTest: (test: CreateTestPayload) => Promise<ReturnPayload>;
-  getUserTests: (userId: string) => Promise<ReturnPayload>;
+  getUserTests: (userId: string) => Promise<GetUserTestsPayload>;
   clearTests: () => Promise<ReturnPayload>;
   getTest: (testId: string) => Promise<ReturnPayload>;
   deleteTest: (testId: string) => Promise<ReturnPayload>;

@@ -84,7 +84,7 @@ export default function UserTests({
     const fetchTests = async () => {
       if (userId) {
         const { success, message, data } = await getUserTests(userId);
-        if (success) {
+        if (success && data) {
           setUserTests(data);
         } else {
           setError(message);
