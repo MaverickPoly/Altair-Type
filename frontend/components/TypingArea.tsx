@@ -37,7 +37,7 @@ const TypingArea: React.FC<TypingAreaProps> = ({
   } = useTypingContext();
 
   const { createTest } = useTest();
-  const [startTime, setStartTime] = useState<number | null>(null);
+  let [startTime, setStartTime] = useState<number | null>(null);
   const typingAreaRef = useRef<HTMLDivElement>(null);
   const router = useRouter();
 
@@ -77,6 +77,7 @@ const TypingArea: React.FC<TypingAreaProps> = ({
     } else {
       minutes = wordsTyped / 60; // Fallback
     }
+    startTime = startTime || 0;
 
     const wpm = minutes > 0 ? Math.round(wordsTyped / minutes) : 0;
     const accuracy =

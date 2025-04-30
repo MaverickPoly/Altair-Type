@@ -1,22 +1,24 @@
+import React from "react";
+
 export interface TypingContextType {
   currentWord: string;
-  setCurrentWord: (word: string) => void;
+  setCurrentWord: React.Dispatch<React.SetStateAction<string>>;
   typedWord: string;
-  setTypedWord: (word: string) => void;
+  setTypedWord: React.Dispatch<React.SetStateAction<string>>;
   wordsTyped: number;
-  setWordsTyped: (count: number) => void;
+  setWordsTyped: React.Dispatch<React.SetStateAction<number>>;
   errors: number;
-  setErrors: (count: number) => void;
+  setErrors: React.Dispatch<React.SetStateAction<number>>;
   isTestActive: boolean;
-  setIsTestActive: (active: boolean) => void;
+  setIsTestActive: React.Dispatch<React.SetStateAction<boolean>>;
   timeLeft: number;
-  setTimeLeft: (seconds: number) => void;
+  setTimeLeft: React.Dispatch<React.SetStateAction<number>>;
   timeLimit: number;
-  setTimeLimit: (seconds: number) => void;
+  setTimeLimit: React.Dispatch<React.SetStateAction<number>>;
   wordCount: number;
-  setWordCount: (count: number) => void;
+  setWordCount: React.Dispatch<React.SetStateAction<number>>;
   customText: string;
-  setCustomText: (text: string) => void;
+  setCustomText: React.Dispatch<React.SetStateAction<string>>;
   currentWordIndex: number;
-  setCurrentWordIndex: (index: number) => void;
+  setCurrentWordIndex: React.Dispatch<React.SetStateAction<number>>;
 }
