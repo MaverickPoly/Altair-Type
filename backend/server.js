@@ -23,7 +23,7 @@ app.use(express.json());
 app.use(cookieParser());
 app.use(
     cors({
-        origin: WEBSITE_URL,
+        origin: "https://altair-type-8ac2.vercel.app",
         credentials: true,
     }),
 );
@@ -40,5 +40,5 @@ app.use("/api/tests", testRoutes);
 app.listen(PORT, async () => {
     await connectDB(DATABASE_URI);
 
-    console.log(`Server is listening: http://localhost:${PORT}`);
+    console.log(`Server is listening on port ${PORT}`);
 });
